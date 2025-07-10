@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider" // This is an existing shadcn/ui component
+import MobileScrollBlocker from "@/components/mobile-scroll-blocker"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="dark">
       <body className={inter.className}>
+        <MobileScrollBlocker />
         <ThemeProvider attribute="class" disableTransitionOnChange>
           {children}
         </ThemeProvider>
