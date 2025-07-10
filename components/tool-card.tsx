@@ -20,13 +20,24 @@ export default function ToolCard({ tool, isFavorite, onToggleFavorite }: ToolCar
 
   return (
     <Card 
-      className="flex flex-col h-full bg-card rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 group card-glow relative border border-transparent hover:border-primary/20 cursor-pointer"
+      className={`flex flex-col h-full bg-card rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 group card-glow relative cursor-pointer ${
+        isFavorite 
+          ? 'border-2 border-primary/50 bg-primary/5 shadow-lg shadow-primary/20' 
+          : 'border border-transparent hover:border-primary/20'
+      }`}
       onClick={handleCardClick}
     >
       {/* 添加顶部发光效果 */}
       <div className="absolute inset-0 rounded-xl overflow-hidden">
         <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-32 bg-primary/10 rounded-full blur-2xl opacity-40"></div>
       </div>
+      
+      {/* 收藏徽章 */}
+      {isFavorite && (
+        <div className="absolute top-2 left-2 bg-primary/90 text-black text-xs px-2 py-1 rounded-full font-medium z-20">
+          Pinned
+        </div>
+      )}
       
       <CardHeader className="p-5 relative z-10">
         <div className="flex items-start justify-between">

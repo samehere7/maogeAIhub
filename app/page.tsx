@@ -26,7 +26,7 @@ export default function HomePage() {
   }, [])
 
   const filteredTools = useMemo(() => {
-    return allTools.filter((tool) => {
+    const filtered = allTools.filter((tool) => {
       const matchesSearch =
         tool.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         tool.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -34,7 +34,17 @@ export default function HomePage() {
       const matchesCategory = selectedCategory === "All" || tool.category === selectedCategory
       return matchesSearch && matchesCategory
     })
-  }, [allTools, searchTerm, selectedCategory])
+    
+    // 按收藏状态排序：收藏的产品置顶
+    return filtered.sort((a, b) => {
+      const aIsFavorite = preferences.favorites.includes(a.id)
+      const bIsFavorite = preferences.favorites.includes(b.id)
+      
+      if (aIsFavorite && !bIsFavorite) return -1
+      if (!aIsFavorite && bIsFavorite) return 1
+      return 0 // 保持原有顺序
+    })
+  }, [allTools, searchTerm, selectedCategory, preferences.favorites])
 
   const categories = useMemo(() => ["All", ...new Set(allTools.map((tool) => tool.category))], [allTools])
 
