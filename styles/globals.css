@@ -90,5 +90,50 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+  html {
+    overflow-x: hidden;
+  }
+}
+
+/* 防止移动端水平滚动 */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* 确保容器不超出屏幕 */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* 防止搜索框溢出 */
+  input[type="search"] {
+    max-width: 100%;
+    min-width: 0;
+  }
+  
+  /* 防止卡片内容溢出 */
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* 防止文本溢出 */
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 }
