@@ -1,12 +1,11 @@
 "use client"
 
-import Link from "next/link"
 import Image from "next/image"
 import type { AiTool } from "@/lib/types"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Heart } from "lucide-react" // Added Star for visual flair
+import { Heart } from "lucide-react"
 
 interface ToolCardProps {
   tool: AiTool
@@ -15,8 +14,15 @@ interface ToolCardProps {
 }
 
 export default function ToolCard({ tool, isFavorite, onToggleFavorite }: ToolCardProps) {
+  const handleCardClick = () => {
+    window.open(tool.originalUrl, "_blank", "noopener,noreferrer")
+  }
+
   return (
-    <Card className="flex flex-col h-full bg-card rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 group card-glow relative border border-transparent hover:border-primary/20">
+    <Card 
+      className="flex flex-col h-full bg-card rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 group card-glow relative border border-transparent hover:border-primary/20 cursor-pointer"
+      onClick={handleCardClick}
+    >
       {/* 添加顶部发光效果 */}
       <div className="absolute inset-0 rounded-xl overflow-hidden">
         <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-32 bg-primary/10 rounded-full blur-2xl opacity-40"></div>
@@ -60,19 +66,10 @@ export default function ToolCard({ tool, isFavorite, onToggleFavorite }: ToolCar
           {tool.description}
         </CardDescription>
       </CardContent>
-      <CardFooter className="p-5 pt-2 flex justify-between items-center border-t border-border/10 mt-auto backdrop-blur-sm bg-black/10 relative z-10">
+      <CardFooter className="p-5 pt-2 flex justify-center items-center border-t border-border/10 mt-auto backdrop-blur-sm bg-black/10 relative z-10">
         <Badge variant="outline" className="text-xs font-medium px-2 py-0.5 border-primary/30 bg-black/30 text-primary/80">
           {tool.category}
         </Badge>
-        <Link href={`/${tool.id}`} passHref legacyBehavior>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-xs h-auto py-1 px-2 group-hover:text-primary transition-colors"
-          >
-            View Details <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-          </Button>
-        </Link>
       </CardFooter>
     </Card>
   )

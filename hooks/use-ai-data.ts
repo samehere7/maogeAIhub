@@ -8,18 +8,26 @@ import { INITIAL_TOOLS, DEFAULT_USER_PREFERENCES, DEFAULT_TRAFFIC_STATS } from "
 const AI_TOOLS_KEY = "maoge_ai_hub_tools"
 const USER_PREFERENCES_KEY = "maoge_ai_hub_user_prefs"
 const TRAFFIC_STATS_KEY = "maoge_ai_hub_traffic"
+const DATA_VERSION_KEY = "maoge_ai_hub_data_version"
+const CURRENT_DATA_VERSION = "2.3" // 更新版本号以强制刷新数据
 
 export function useAiTools() {
   const [tools, setTools] = useLocalStorage<AiTool[]>(AI_TOOLS_KEY, INITIAL_TOOLS)
-  // Ensure tools are initialized if localStorage is empty
+  
+  // 检查数据版本并强制更新
   useEffect(() => {
     if (typeof window !== "undefined") {
+      const storedVersion = window.localStorage.getItem(DATA_VERSION_KEY)
       const storedTools = window.localStorage.getItem(AI_TOOLS_KEY)
-      if (!storedTools || JSON.parse(storedTools).length === 0) {
+      
+      // 如果版本不匹配或没有工具数据，强制更新
+      if (storedVersion !== CURRENT_DATA_VERSION || !storedTools || JSON.parse(storedTools).length === 0) {
         setTools(INITIAL_TOOLS)
+        window.localStorage.setItem(DATA_VERSION_KEY, CURRENT_DATA_VERSION)
       }
     }
   }, [setTools])
+  
   return { tools, setTools }
 }
 
