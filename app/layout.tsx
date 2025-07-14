@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider" // This is an existing shadcn/ui component
 import MobileScrollBlocker from "@/components/mobile-scroll-blocker"
@@ -33,6 +34,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="dark">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-EBDWTE27P5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EBDWTE27P5');
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>
         <MobileScrollBlocker />
         <ThemeProvider attribute="class" disableTransitionOnChange>
