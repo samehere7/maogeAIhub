@@ -2,44 +2,126 @@ import type { AiTool, UserPreferences, AllTrafficStats } from "./types"
 
 export const INITIAL_TOOLS: AiTool[] = [
   {
-    id: "flux-kontext-ai",
-    name: "Flux Kontext AI",
-    iconUrl: "/flux-kontext-ai-icon.svg",
-    description: "Powerful AI text-to-image tool that supports multiple styles of image generation, providing high-quality image creation services based on the Flux model.",
-    category: "Image Generation",
+    id: "remove-bg",
+    name: "remove.bg",
+    iconUrl: "/remove-bg-icon.svg",
+    description: "AI-powered background removal tool that automatically removes backgrounds from images in seconds, perfect for e-commerce, marketing, and creative projects.",
+    category: "Image Enhancement",
     screenshots: [
       "/placeholder.svg?width=600&height=400",
       "/placeholder.svg?width=600&height=400",
       "/placeholder.svg?width=600&height=400",
     ],
     markdownDoc: `
-# Flux Kontext AI Usage Guide
+# remove.bg Usage Guide
 
 ## Main Features
-- High-quality image generation based on Flux model
-- Support for multiple artistic styles and visual styles
-- Fast text-to-image conversion
-- Support for both English and Chinese prompts
+- Automatic AI-powered background removal
+- Supports people, products, animals, cars, and graphics
+- High-quality edge detection and preservation
+- Bulk processing capabilities
+- API integration available
+- Multiple output formats (PNG, JPG)
 
 ## Usage Steps
-1. Visit the Flux Kontext AI website
-2. Enter your image description in the input box
-3. Select appropriate style and parameter settings
-4. Click the generate button and wait for image generation
-5. Download or save the generated image
+1. Visit remove.bg website
+2. Upload your image or drag & drop
+3. Wait for automatic AI processing (usually 5 seconds)
+4. Download the result with transparent background
+5. Use the image in your projects
 
-## Usage Tips
-- Use detailed and specific descriptions for better results
-- You can specify visual style, color, composition and other elements
-- Support for multiple image sizes and aspect ratios
-- Adjust generation parameters to get different effects
+## Use Cases
+- **E-commerce**: Product photography with clean backgrounds
+- **Marketing**: Creating promotional materials and ads
+- **Social Media**: Profile pictures and content creation
+- **Design**: Graphic design and photo editing workflows
+- **Photography**: Portrait and product photo enhancement
+
+## Pricing
+- Free tier: Limited downloads per month
+- Paid plans: Higher resolution and bulk processing
+- API access: For developers and businesses
+- Subscription options available
+
+## Tips for Best Results
+- Use high-contrast images for better results
+- Ensure clear subject boundaries
+- Good lighting improves accuracy
+- Avoid complex backgrounds when possible
+- Preview before downloading
 
 ## Notes
-- Please follow the platform's terms of use and content policy
-- Generated images are for personal use only
-- Pay attention to copyright and intellectual property issues
+- Powered by advanced computer vision AI
+- Supports various image formats
+- Works best with clear, well-lit subjects
+- Commercial use allowed with paid plans
     `,
-    originalUrl: "https://flux-kontext-ai.org",
+    originalUrl: "https://www.remove.bg",
+  },
+  {
+    id: "remini-ai",
+    name: "Remini AI",
+    iconUrl: "/remini-ai-icon.svg",
+    description: "AI photo enhancer that transforms low-quality photos into stunning HD images, restoring old photos and improving image quality with advanced AI technology.",
+    category: "Image Enhancement",
+    screenshots: [
+      "/placeholder.svg?width=600&height=400",
+      "/placeholder.svg?width=600&height=400",
+      "/placeholder.svg?width=600&height=400",
+    ],
+    markdownDoc: `
+# Remini AI Usage Guide
+
+## Main Features
+- AI-powered photo enhancement and restoration
+- Transform low-resolution images to HD quality
+- Face enhancement and detail restoration
+- Old photo colorization and repair
+- Video enhancement capabilities
+- Batch processing support
+
+## Enhancement Types
+- **Photo Enhancement**: Improve image quality and sharpness
+- **Face Enhancement**: Enhance facial details and clarity
+- **Old Photo Restoration**: Repair damaged or faded photos
+- **Colorization**: Add color to black and white photos
+- **Video Enhancement**: Improve video quality and resolution
+
+## Usage Steps
+1. Download Remini app or visit the website
+2. Upload your low-quality or old photo
+3. Select enhancement type (Auto, Face, or specific mode)
+4. Wait for AI processing (typically 10-30 seconds)
+5. Compare before/after results
+6. Download or share the enhanced image
+
+## Best Use Cases
+- **Personal Photos**: Enhance family photos and memories
+- **Professional**: Improve business headshots and portraits
+- **Historical**: Restore old family photographs
+- **Social Media**: Create high-quality content
+- **Print**: Prepare images for large format printing
+
+## Tips for Optimal Results
+- Start with the highest quality original possible
+- Ensure faces are clearly visible for face enhancement
+- Use appropriate enhancement mode for your image type
+- Multiple processing attempts may yield different results
+- Save originals before enhancement
+
+## Pricing & Access
+- Free version: Limited daily enhancements
+- Premium subscription: Unlimited processing
+- Professional plans: Advanced features and batch processing
+- Mobile app and web version available
+
+## Notes
+- Uses cutting-edge AI and machine learning
+- Continuous improvements to AI models
+- Privacy-focused with secure processing
+- Available on iOS, Android, and web platforms
+    `,
+    originalUrl: "https://remini.ai",
   },
   {
     id: "ai-song-generator",
