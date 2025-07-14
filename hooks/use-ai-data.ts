@@ -9,7 +9,7 @@ const AI_TOOLS_KEY = "maoge_ai_hub_tools"
 const USER_PREFERENCES_KEY = "maoge_ai_hub_user_prefs"
 const TRAFFIC_STATS_KEY = "maoge_ai_hub_traffic"
 const DATA_VERSION_KEY = "maoge_ai_hub_data_version"
-const CURRENT_DATA_VERSION = "2.3" // 更新版本号以强制刷新数据
+const CURRENT_DATA_VERSION = "2.4" // 更新版本号以强制刷新数据
 
 export function useAiTools() {
   const [tools, setTools] = useLocalStorage<AiTool[]>(AI_TOOLS_KEY, INITIAL_TOOLS)

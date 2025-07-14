@@ -84,6 +84,62 @@ export const INITIAL_TOOLS: AiTool[] = [
     `,
     originalUrl: "http://aisonggenerator.cc",
   },
+  {
+    id: "flux1-ai",
+    name: "Flux.1 AI",
+    iconUrl: "/flux1-ai-icon.svg",
+    description: "Free online advanced Flux AI image generator with multiple model variants (pro, dev, schnell), supporting high-resolution image creation up to 2.0 megapixels.",
+    category: "Image Generation",
+    screenshots: [
+      "/placeholder.svg?width=600&height=400",
+      "/placeholder.svg?width=600&height=400",
+      "/placeholder.svg?width=600&height=400",
+    ],
+    markdownDoc: `
+# Flux.1 AI Usage Guide
+
+## Main Features
+- Advanced transformer-based flow models for image generation
+- Multiple model variants: Flux.1 [pro], [dev], [schnell]
+- High-resolution output up to 2.0 megapixels
+- Support for various aspect ratios
+- Excellent prompt adherence and diverse image styles
+- Upcoming text-to-video capabilities
+
+## Model Variants
+- **Flux.1 [pro]**: Highest quality, best for professional use
+- **Flux.1 [dev]**: Balanced performance and quality
+- **Flux.1 [schnell]**: Fastest generation for quick iterations
+
+## Usage Steps
+1. Visit Flux.1 AI website and register for free credits
+2. Choose your preferred model variant
+3. Enter detailed text description of desired image
+4. Select image dimensions and aspect ratio
+5. Click generate and wait for high-quality results
+6. Download your generated images
+
+## Usage Tips
+- Use detailed, specific prompts for better results
+- Experiment with different model variants for various needs
+- Specify artistic styles, lighting, and composition details
+- Take advantage of the high-resolution output capabilities
+- Try different aspect ratios for various use cases
+
+## Pricing & Access
+- Free tier available with registration credits
+- Multiple access methods: Web interface, API, Replicate, fal.ai
+- Open-weight versions available for non-commercial use
+- Paid plans for enhanced features and commercial usage
+
+## Notes
+- Developed by BlackForestLabs with cutting-edge technology
+- Excellent for both creative and professional image generation
+- Follow platform terms of service for commercial usage
+- Respect content policies and guidelines
+    `,
+    originalUrl: "https://flux1.ai",
+  },
 ]
 
 export const DEFAULT_USER_PREFERENCES: UserPreferences = {
